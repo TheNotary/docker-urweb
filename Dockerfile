@@ -1,8 +1,8 @@
 FROM ubuntu:15.10
-MAINTAINER Bogdan Popa <bogdan@defn.io>
+# MAINTAINER Bogdan Popa <bogdan@defn.io>
 
 RUN apt-get update
-RUN apt-get install -y build-essential libgmp-dev libssl-dev mlton
+RUN apt-get install -y build-essential libgmp-dev libssl-dev mlton libpq-dev
 
 ADD http://www.impredicative.com/ur/urweb-20151122.tgz /tmp/urweb-20151122.tgz
 RUN tar xzf /tmp/urweb-20151122.tgz
