@@ -9,10 +9,11 @@ RUN apt-get install -y build-essential \
   mlton \
   sqlite3 
 
-ADD http://www.impredicative.com/ur/urweb-20160805.tgz /tmp/urweb.tgz
+# ADD http://www.impredicative.com/ur/urweb-20160805.tgz /tmp/urweb.tgz
+COPY urweb-20160805.tgz /tmp/urweb.tgz
 RUN tar xzf /tmp/urweb.tgz
 RUN rm /tmp/urweb.tgz
-RUN mv urweb /urweb
+RUN mv urweb* /urweb
 
 WORKDIR /urweb
 RUN ./configure && \
@@ -23,4 +24,4 @@ ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN mkdir /app
 VOLUME /app
 
-# ENTRYPOINT /docker-entrypoint.sh
+# ENTRYPOINT [ "/docker-entrypoint.sh" ]

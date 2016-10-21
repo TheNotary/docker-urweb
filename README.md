@@ -11,3 +11,9 @@ $  make build
 $  make console
 #  . /docker-entrypoint.sh
 ```
+
+Test with:
+
+```
+$  curl 127.0.0.1:8080/Demo/Demo/main
+```
