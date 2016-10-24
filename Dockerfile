@@ -2,6 +2,7 @@ FROM ubuntu:15.10
 
 RUN apt-get update
 RUN apt-get install -y build-essential \
+  emacs-goodies-el \
   libgmp-dev \
   libssl-dev \
   libpq-dev \
@@ -23,5 +24,8 @@ RUN ./configure && \
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN mkdir /app
 VOLUME /app
+RUN echo "./demo/demo.exe" >> /root/.bash_history
+RUN echo "sqlite3 /path_to_db.sqlite <demo/demo.sql" >> /root/.bash_history
+RUN echo "urweb -dbms sqlite -db /path_to_db.sqlite -demo /Demo demo" >> /root/.bash_history
 
 # ENTRYPOINT [ "/docker-entrypoint.sh" ]
