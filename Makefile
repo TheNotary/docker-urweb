@@ -6,8 +6,8 @@ build:
 
 console:
 	docker run -it \
-    -p 8080:8080 \
-    ${USER}/${DOCKER_IMAGE_NAME} bash
+		-p 8080:8080 \
+		${USER}/${DOCKER_IMAGE_NAME} bash
 
 tag:
 	docker tag -f ${DOCKER_IMAGE_NAME} "${USER}/${DOCKER_IMAGE_NAME}:latest"
