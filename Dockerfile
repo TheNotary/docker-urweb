@@ -10,8 +10,10 @@ RUN apt-get install -y build-essential \
   mlton \
   sqlite3 
 
-# ADD http://www.impredicative.com/ur/urweb-20160805.tgz /tmp/urweb.tgz
-COPY urweb-20160805.tgz /tmp/urweb.tgz
+RUN echo
+
+# ADD http://www.impredicative.com/ur/urweb-20170105.tgz /tmp/urweb.tgz
+COPY urweb-20170105.tgz /tmp/urweb.tgz
 RUN tar xzf /tmp/urweb.tgz
 RUN rm /tmp/urweb.tgz
 RUN mv urweb* /urweb
