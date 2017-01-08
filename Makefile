@@ -8,4 +8,7 @@ console:
 		-p 8080:8080 \
 		${USER}/${DOCKER_IMAGE_NAME} bash
 
+clean:
+	docker rmi john/urweb || true
+
 .PHONY: build
